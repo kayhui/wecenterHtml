@@ -1,0 +1,22 @@
+<div class="container">
+  <!-- $ctrl to get something from DOM -->
+  <h1>
+    {{ $ctrl.tutor.name }}
+    <a href="tutor"><i class="bi bi-arrow-left-square-fill float-end"></i></a>
+  </h1>
+  <div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-12 col-lg-6 position-relative">
+        <img ng-src="{{ $ctrl.tutor.path }}" class="img-fluid rounded-start bgimg" alt="..." />
+        <img ng-src="{{ $ctrl.tutor.path }}" class="img-fluid clearIcon d-none d-lg-block" alt="..." />
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="card-body">
+          <h5 class="card-title">{{ $ctrl.tutor.name }}</h5>
+          <div class="card-text">{{ $ctrl.tutor.detail }}</div>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

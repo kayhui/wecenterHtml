@@ -1,0 +1,57 @@
+<div
+  class="container-fluid"
+  style="
+    background-image: url('./assets/images/course-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  "
+>
+  <div class="container">
+    <div class="row">
+      <h3 class="pt-3">課程資訊</h3>
+    </div>
+    <div class="row gy-3">
+      <div
+        class="col-12 col-lg-4"
+        ng-repeat="course in courses"
+        ng-if="$index < ($ctrl.preview ? $ctrl.preview : courses.length)"
+      >
+        <div class="card mb-5" style="height: 650px; width: 300">
+          <img ng-if="$index % 2 == 0" src="https://picsum.photos/1920/1080" class="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title fw-bold mb-2">{{ course.Project }}</h5>
+            <div style="width: 100%">
+              <p
+                class="card-text"
+                style="
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 8;
+                "
+              >
+                {{ course.Content }}
+              </p>
+            </div>
+            <p class="card-text">導師: {{ course.Lecturer }}</p>
+            <p
+              class="card-text"
+              style="
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+              "
+            >
+              費用: {{ course.Fee }}
+            </p>
+          </div>
+          <img ng-if="$index % 2 != 0" src="https://picsum.photos/1920/1080" class="card-img-top" />
+        </div>
+      </div>
+      <div class="d-flex" ng-transclude></div>
+    </div>
+  </div>
+</div>

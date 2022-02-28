@@ -1,0 +1,45 @@
+<div class="container-fluid py-5 px-4" style="background-color: #A0E7E5;">
+  <div class="row">
+    <h3 class="pt-3">個人諮詢</h3>
+  </div>
+  <div class="row container mx-auto">
+    <div ng-repeat="x in consultationInfo" class="col-12 col-md-6 col-lg-4 my-3" ng-if="$index < ($ctrl.preview ? $ctrl.preview : consultationInfo.length)">
+      <div class="card w-100 my-2">  
+        <img ng-src="{{ x.path }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ x.name }}</h5>
+          <p class="card-text">
+            {{ x.title }}
+          </p>
+          <p class="card-text decription">
+            {{ x.decription }}
+          </p>
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom">
+            更多資料
+          </button>
+
+          <div class="offcanvas offcanvas-bottom h-50" tabindex="-1" id="offcanvasBottom">
+            <div class="container border-end border-start border-2 mt-5 overflow-auto">
+              <div class="offcanvas-header px-5">
+                <h5 class="offcanvas-title" id="offcanvasBottomLabel">{{ x.fee }}</h5>
+                <button
+                  type="button"
+                  class="btn-close text-reset"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="offcanvas-body small px-5 fs-5">
+                {{ x.decription }}
+                <div class="mt-5">
+                  <a href="#" class="btn btn-primary">立即預約>>></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex" ng-transclude></div>
+  </div>
+</div>

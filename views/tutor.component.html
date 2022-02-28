@@ -1,0 +1,50 @@
+<div class="container-fluid pt-5">
+  <div class="row">
+    <h3 class="pt-3">導師團隊</h3>
+  </div>
+  <div class="container">
+    <div class="swiper mySwiper pb-5">
+      <div class="swiper-wrapper">
+        <div ng-repeat="x in tutorInfo" class="swiper-slide d-flex">
+          <div ng-click="goto(x.name)" class="card mx-auto" style="width: 18rem; height: 350px">
+            <div class="w-100 h-75">
+              <img ng-src="{{ x.path }}" class="card-img-top h-100" />
+            </div>
+            <div class="card-body">
+              <div class="card-text">
+                <div>{{ x.name }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div> -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="row py-5">
+      <div class="col-4">
+        <div class="list-group list-group-flush">
+          <div class="list-group-item fs-3 fw-bolder">導師</div>
+          <button
+            ng-click="goto(x.name)"
+            ng-repeat="x in tutorInfo"
+            class="list-group-item list-group-item-action py-3"
+          >
+            {{ x.name }}
+          </button>
+        </div>
+      </div>
+      <div class="col-8">
+        WE Center
+        滙聚各方專業及具經驗的導師，開辦不同層面的課程，藉此提升個人生理、心理、心靈的素質，促進個人成長；與他人互動的關係轉換；社會鏈接的融和。
+        與此同時，本中心亦開放平台培育人才，讓新進導師有機會發揮擅長；豐富經驗，一同參與身心靈培訓的教學領域。 WE Center
+        歡欣各位有志導師與本中心聯絡，作進一步溝通與認識，共同開拓各類新課程，為參與者提供多元化的學習途徑。 WE Center
+        的導師團隊深信每一位學員可以從各自不同經驗的導師身上學習並獲得幫助。同時，倡導個人生理、心理、心靈的素質成長的首要條件是為自己的生命負責，從過程中學會對生命的尊重與信任。
+        由一個好的導師領導的課程，無論內容是什麼都是值得學習的。同時也要有賴參與者對自己生命的誠諾，積極參與投入過程中，不斷拓展生命的可能與進步。
+        事實上，沒有一個導師和課程可以一次解決來訪者的所有問題，一切都在乎於個人對生命的堅守，導師以伴倍精神與參與者一起步向成長與共融的道路。
+      </div>
+    </div>
+  </div>
+</div>
