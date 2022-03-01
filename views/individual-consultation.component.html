@@ -1,12 +1,16 @@
-<div class="container-fluid py-5 px-4" style="background-color: #A0E7E5;">
-  <div class="row">
-    <h3 class="pt-3">個人諮詢</h3>
-  </div>
+<div class="container-fluid py-5 px-4" style="background-color: #a0e7e5">
   <div class="row container mx-auto">
-    <div ng-repeat="x in consultationInfo" class="col-12 col-md-6 col-lg-4 my-3" ng-if="$index < ($ctrl.preview ? $ctrl.preview : consultationInfo.length)">
-      <div class="card w-100 my-2">  
+    <div class="row">
+      <h3 class="pt-3">個人諮詢</h3>
+    </div>
+    <div
+      ng-repeat="x in consultationInfo"
+      class="col-12 col-md-6 col-lg-4 my-3"
+      ng-if="$index < ($ctrl.preview ? $ctrl.preview : consultationInfo.length)"
+    >
+      <div class="card w-100 my-2">
         <img ng-src="{{ x.path }}" class="card-img-top" alt="..." />
-        <div class="card-body">
+        <div class="card-body" style="background-color: rgba(169, 162, 152, 0.3)">
           <h5 class="card-title">{{ x.name }}</h5>
           <p class="card-text">
             {{ x.title }}
