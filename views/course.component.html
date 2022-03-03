@@ -12,7 +12,7 @@
         ng-repeat="course in courses"
         ng-if="$index < ($ctrl.preview ? $ctrl.preview : courses.length)"
       >
-        <div class="card mb-5" style="height: 650px; width: 300">
+        <div class="card mb-5" style="min-height: 650px; width: 300">
           <img ng-if="$index % 2 == 0" src="https://picsum.photos/1920/1080" class="card-img-top" />
           <div class="card-body">
             <h5 class="card-title fw-bold mb-2">{{ course.Project }}</h5>

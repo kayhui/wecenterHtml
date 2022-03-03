@@ -15,7 +15,21 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li ng-repeat="item in menu" class="nav-item">
-          <a ng-click="scrollTo(item.id)" href="#" class="nav-link fs-5">{{ item.title }}</a>
+          <div ng-if="item.url == 'shop'" class="btn-group dropdown">
+            <a ng-href="{{ item.url }}" class="nav-link fs-5">{{ item.title }}</a>
+            <button
+              type="button"
+              class="btn dropdown-toggle dropdown-toggle-split p-0"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            ></button>
+            <ul class="dropdown-menu">
+              <li ng-repeat="section in sections">
+                <a class="dropdown-item" ng-href="{{ item.url }}/{{ section }}">{{ section }}</a>
+              </li>
+            </ul>
+          </div>
+          <a ng-if="!item.url" ng-click="scrollTo(item.id)" href="#" class="nav-link fs-5">{{ item.title }}</a>
         </li>
       </ul>
     </div>
